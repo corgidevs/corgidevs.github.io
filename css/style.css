@@ -171,10 +171,13 @@ nav a:hover {
 #hero {
   display: flex;
   position: relative;
-  background-attachment: fixed;
+  background-position: scroll;
   background-blend-mode: screen;
   background-color: #FF6B25;
   background-image: url("https://i.imgur.com/4aMzYpQ.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   color: white;
   display: grid;
