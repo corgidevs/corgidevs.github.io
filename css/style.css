@@ -448,7 +448,6 @@ footer a {
     top: initial;
     left: initial;
     /* end Edge support stuff */
-
     grid-column: 3 / 4;
     display: flex;
     justify-content: flex-end;
@@ -504,21 +503,6 @@ footer a {
   .solutions {
     flex-direction: row;
     justify-content: space-between;
-  }
-
-  .solution {
-    margin: 1.25em 1.875em;
-    display: flex;
-  }
-
-  .solution-content {
-    flex: 1 1 auto;
-  }
-
-  .solution-img {
-    object-fit: contain;
-    margin: 1.25em .5em;
-    align-self: flex-start
   }
 
   #process-showcase {
