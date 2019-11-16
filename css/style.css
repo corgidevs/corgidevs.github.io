@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: #1F1F1F;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+/* typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.125rem;
+}
+
+h2 {
+  font-size: 2.125rem;
+  line-height: 1.3em;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+h5 {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+p {
+  margin-bottom: 0.85em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: #007FFF;
+  text-decoration: none;
+}
+
+header {
+  background: rgba(255, 107, 37, .85);
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 999;
+}
+
+/* navigation */
+
+.logo {
+  width: 59px;
+  height: 70px;
+  background: url("../svg/logo.svg");
+  background-size: 59px 70px;
+  display: block;
+  margin: 0 auto;
+  text-indent: -9999px;
+}
+
+/* making it tabbable */
+.nav-toggle {
+  left: -9999px !important;
+  position: absolute !important;
+  top: -9999px !important;
+}
+
+.nav-toggle:focus ~ .nav-toggle-label {
+  outline: 3px solid rgba(lightblue, .75);
+}
+
+.nav-toggle-label {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  left: 0;
+  margin-left: 1em;
+  position: absolute;
+  top: 0;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  background: #FFF;
+  border-radius: 2px;
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 2em;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
+  background: rgba(255, 107, 37, .85);
+  left: 0;
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  transform-origin: top;
+  transform: scale(1, 0);
+  transition: transform 400ms ease-in-out;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-bottom: .5em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: #FFF;
+  font-size: 1rem;
+  opacity: 0;
+  text-transform: uppercase;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+/* homepage styles */
+#hero {
+  display: flex;
+  position: relative;
+  background-attachment: fixed;
+  background-blend-mode: screen;
+  background-color: #FF6B25;
+  background-image: url("https://i.imgur.com/4aMzYpQ.jpg");
+  background-size: cover;
+  color: white;
+  display: grid;
+  height: 70vh;
+  place-items: center;
+  margin: 0;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 1.1em;
+  line-height: 1.2;
+  margin: 0;
+  padding: 1em;
+  text-align: center;
+  text-shadow: 1px 1px 3px #1F1F1F;
+}
+
+section {
+  padding: 2em 1em;
+}
+
+section ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+section ul a {
+  display: inline-block;
+  padding: 0.015em;
+}
+
+.section-title {
+  text-align: center;
+}
+
+.section-title-small {
+  font-size: 1.81rem;
+  text-align: center;
+}
+
+/* solutions */
+#solution-showcase {
+  padding: 2em 0 0;
+}
+
+.solutions {
+  display: flex;
+  flex-direction: column;
+}
+
+.solution {
+  margin: 2em 0;
+  text-align: center;
+}
+
+.solution-img {
+  object-fit: contain;
+}
+
+.solution-content h3 {
+	font-weight: bold;
+	margin-bottom: .25em;
+}
+
+.corgi_work {
+  padding: 0;
+  display: block;
+  text-align: center;
+  margin: 0;
+}
+
+.corgi {
+  width: 300px;
+  height: 150px;
+  background: url("../svg/corgi1.svg");
+  background-size: 300px 150px;
+  margin: 0 auto;
+}
+
+/* process */
+#process-showcase {
+  -webkit-clip-path: polygon(0 6vw,100% 0,100% 100%,0 100%);
+  background-color: #000;
+  clip-path: polygon(0 6vw,100% 0,100% 100%,0 100%);
+}
+
+.processes {
+  border-radius: 1em;
+  border: 2px solid #FFF;
+  box-shadow: 0 0 1em rgb(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+}
+
+.processes h4 {
+  margin: .5em;
+  text-align: center;
+}
+
+.process {
+  background-color: #FFF;
+  border-radius: 1em;
+  margin: 1em;
+  padding: 0.381em;
+}
+
+.process h4 {
+  margin: 0;
+}
+
+.process ul {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0.381em;
+  text-align: left;
+}
+
+/* members */
+.cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  border-radius: 1em;
+  box-shadow: 0 0 1em rgb(0, 0, 0, 0.3);
+  margin: 1em 0;
+  overflow: hidden;
+}
+
+.card-img {
+  max-width: 100%;
+}
+
+.card-content {
+  padding: 1em;
+  text-align: center;
+}
+
+.card-content img {
+  margin: .25em;
+}
+
+.learn {
+  text-align: right;
+  font-size: 1rem;
+}
+
+/* projects */
+.projects {
+  display: flex;
+  flex-direction: column;
+}
+
+.project {
+  margin: 1em 0;
+  position: relative;
+}
+
+.opacity_div {
+  background: rgba(22, 21, 21, 0.8);
+  border-radius: 1em;
+  height: 335px;
+  margin: 0 auto;
+  position: relative;
+  width: 335px;
+  z-index: 1;
+}
+
+.project h4 {
+  display: block;
+  font-weight: bold;
+  left: 50%;
+  position: absolute;
+  text-shadow: 0 0 5px #1F1F1F;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.project img {
+  border-radius: 1em;
+  filter: alpha(opacity=60);
+  max-width: 335px;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+/* contact */
+#contact {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact-content {
+  padding: 1em;
+}
+
+.corgi_contact_img {
+  width: 300px;
+  height: 150px;
+  background: url("../svg/corgi2.svg");
+  background-size: 300px 150px;
+  margin: 0 auto;
+}
+
+/* footer */
+footer {
+  background-color: #1F1F1F;
+  color: #FFF;
+  grid-column: 1/ -1;
+  margin-top: auto;
+  padding: .5em;
+}
+
+footer a {
+  color: inherit;
+}
+
+.footer-nav {
+  display: flex;
+  list-style: none;
+}
+
+/* Colors */
+.white {
+  color: #FFF;
+}
+
+@media only screen and (min-width: 750px) {
+  section {
+    padding: 3em 2em;
+  }
+
+  main {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+
+  .logo {
+    grid-column: 2 / 3;
+  }
+
+  .nav-toggle-label {
+    display: none;
+  }
+
+  nav {
+    align-items: center;
+    all: unset; /* this causes issues with Edge, since it's unsupported */
+    background: none;
+    display: flex;
+    grid-column: 3 / 4;
+    justify-content: flex-end;
+    left: initial;
+    position: relative;
+    text-align: left;
+    top: initial;
+    transform: scale(1,1);
+    transition: none;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li {
+    margin-bottom: 0;
+    margin-left: 3em;
+  }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+
+  nav a::before {
+    background: black;
+    content: '';
+    display: block;
+    height: 5px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: -.75em;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+  }
+
+  nav a:hover::before {
+    transform: scale(1,1);
+  }
+
+  #hero {
+    background-attachment: fixed;
+    height: 90vh;
+  }
+
+  .section-title,
+  .section-title-small {
+    padding: 0 0 1em;
+  }
+
+  #solution-showcase {
+    padding: 2em 1em 2em;
+  }
+
+  .solutions {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .solution {
+    margin: 1.25em 1.875em;
+    display: flex;
+  }
+
+  .solution-content {
+    flex: 1 1 auto;
+  }
+
+  .solution-img {
+    object-fit: contain;
+    margin: 1.25em .5em;
+    align-self: flex-start
+  }
+
+  #process-showcase {
+    -webkit-clip-path: polygon(0 3vw,100% 0,100% 100%,0 100%);
+    clip-path: polygon(0 3vw,100% 0,100% 100%,0 100%);
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    position: relative;
+    right: 50%;
+    width: 100vw;
+  }
+
+  .processes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+  }
+
+  .processes h4 {
+    flex: 1 0 100%;
+  }
+
+  .cards {
+    flex-direction: row;
+  }
+
+  .card {
+    margin: 0;
+    flex: 0 1 33%;
+  }
+
+  .card + .card {
+    margin-left: 1em;
+  }
+
+  .projects {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  #contact {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  #contact h2 {
+    flex: 1 0 100%;
+  }
+}
