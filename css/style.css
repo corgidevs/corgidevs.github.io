@@ -79,9 +79,9 @@ header {
 
 /* making it tabbable */
 .nav-toggle {
-  left: -9999px !important;
   position: absolute !important;
   top: -9999px !important;
+  left: -9999px !important;
 }
 
 .nav-toggle:focus ~ .nav-toggle-label {
@@ -89,24 +89,24 @@ header {
 }
 
 .nav-toggle-label {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  left: 0;
-  margin-left: 1em;
   position: absolute;
   top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .nav-toggle-label span,
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
-  background: #FFF;
-  border-radius: 2px;
   display: block;
+  background: white;
   height: 2px;
-  position: relative;
   width: 2em;
+  border-radius: 2px;
+  position: relative;
 }
 
 .nav-toggle-label span::before,
@@ -124,33 +124,34 @@ header {
 }
 
 nav {
-  background: rgba(255, 107, 37, .85);
-  left: 0;
   position: absolute;
   text-align: left;
   top: 100%;
-  transform-origin: top;
-  transform: scale(1, 0);
-  transition: transform 400ms ease-in-out;
+  left: 0;
+  background: rgba(255, 107, 37, .85);
   width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
 }
 
 nav ul {
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 nav li {
-  margin-bottom: .5em;
+  margin-bottom: 1em;
   margin-left: 1em;
 }
 
 nav a {
-  color: #FFF;
-  font-size: 1rem;
-  opacity: 0;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
   text-transform: uppercase;
+  opacity: 0;
   transition: opacity 150ms ease-in-out;
 }
 
@@ -167,34 +168,37 @@ nav a:hover {
   transition: opacity 250ms ease-in-out 250ms;
 }
 
+
 /* homepage styles */
-#hero {
-  display: flex;
-  position: relative;
-  background-position: scroll;
-  background-blend-mode: screen;
-  background-color: #FF6B25;
+#hero-container {
   background-image: url("https://i.imgur.com/4aMzYpQ.jpg");
+  /* background-position: center; */
+  background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  color: white;
-  display: grid;
-  height: 70vh;
-  place-items: center;
-  margin: 0;
+  position: relative;
+  height: 100vh;
+}
+
+.inner-container {
+  position: absolute;
+  background: rgba(255, 107, 37, .6);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .hero-title {
+  padding: .5em;
   font-size: 2.5rem;
   font-weight: 400;
   letter-spacing: 0em;
-  line-height: 1.1em;
-  line-height: 1.2;
-  margin: 0;
-  padding: 1em;
-  text-align: center;
+  line-height: 1.61em;
   text-shadow: 1px 1px 3px #1F1F1F;
 }
 
@@ -225,10 +229,6 @@ section ul a {
 }
 
 /* solutions */
-#solution-showcase {
-  padding: 2em 0 0;
-}
-
 .solutions {
   display: flex;
   flex-direction: column;
@@ -415,7 +415,7 @@ footer a {
   color: #FFF;
 }
 
-@media only screen and (min-width: 750px) {
+@media screen and (min-width: 750px) {
   section {
     padding: 3em 2em;
   }
@@ -439,18 +439,20 @@ footer a {
   }
 
   nav {
-    align-items: center;
-    all: unset; /* this causes issues with Edge, since it's unsupported */
-    background: none;
-    display: flex;
-    grid-column: 3 / 4;
-    justify-content: flex-end;
-    left: initial;
+    /* the following lines are not from my video, but add Edge support */
     position: relative;
     text-align: left;
-    top: initial;
-    transform: scale(1,1);
     transition: none;
+    transform: scale(1,1);
+    background: none;
+    top: initial;
+    left: initial;
+    /* end Edge support stuff */
+
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   nav ul {
@@ -484,9 +486,10 @@ footer a {
     transform: scale(1,1);
   }
 
-  #hero {
-    background-attachment: fixed;
-    height: 90vh;
+  .hero-title {
+    font-weight: 400;
+    line-height: 1.1em;
+    text-shadow: 1px 1px 3px #1F1F1F;
   }
 
   .section-title,
