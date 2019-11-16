@@ -542,6 +542,7 @@ footer a {
 
   .projects {
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
   }
 
